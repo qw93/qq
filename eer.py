@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+import matplotlib as pd
 import gradio as gr
 def p_f(s):
     x=np.linspace(-10,10,400)
