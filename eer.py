@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 import gradio as gr
 
 def p_f(s):
+    if "__" in s or len(s) > 40:
+        raise ValueError()
     x = np.linspace(-10, 10, 400)
-    y = eval(s, {"x": x, "np": np})
+    y = eval(s,{"__builtins__": {}} {"x": x, "np": np})
 
     fig, ax = plt.subplots()
     ax.plot(x, y)
